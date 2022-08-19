@@ -1,0 +1,8 @@
+<launch>
+  <!-- Start tars bringup and and IMU Filter (currently not available in TARS v4.0 yet) -->
+  <include file="$(find tars_bringup)/launch/include/tars_camera.launch" />
+
+  <!-- Start web video server -->
+  <node name="web_video_server" pkg="web_video_server" type="web_video_server" output="screen" />
+
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+
+    <!-- args-->
+    <arg name="use_lidar" default="true" />
+
+    <!-- Start tars bringup and IMU Filter (currently not available in TARS v4.0 yet) -->
+    <include file="$(find tars_bringup)/launch/bringup.launch" />
+
+    <!-- Lidar Relay -->
+    <include if="$(arg use_lidar)" file="$(find tars_bringup)/launch/include/lidar_laser.launch" />
+
+    <include file="$(find lingao_description)/launch/model.launch"/>
+    
+</launch>
